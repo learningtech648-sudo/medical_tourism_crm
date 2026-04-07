@@ -57,6 +57,7 @@ export default function NewLeadPage() {
         happy_call_date: null,
         happy_call_outcome: null,
         korea_arrival_date: form.korea_arrival_date || null,
+        surgery_date: null,
       })
       router.push(`/patients/${patient.id}`)
     } catch (e: unknown) {
