@@ -7,6 +7,7 @@ import { getPatient, updatePatient, getClinics, getConsultationsForPatient } fro
 import type { Patient, Clinic, Consultation, PipelineStage } from '@/types'
 import { PIPELINE_STAGES, CHANNEL_LABELS } from '@/types'
 import Link from 'next/link'
+import ProgressStatusBar from '@/app/components/ProgressStatusBar'
 
 const STAGE_COLOR: Record<string, string> = Object.fromEntries(
   PIPELINE_STAGES.map(s => [s.key, s.color])
@@ -66,7 +67,7 @@ export default function PatientDetailPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-100 px-6 py-4 sticky top-0 z-10">
+      <div className="bg-white border-b border-gray-100 px-6 py-4 sticky top-14 z-10">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button onClick={() => router.back()} className="text-gray-400 hover:text-gray-600 text-lg">←</button>
@@ -92,6 +93,9 @@ export default function PatientDetailPage() {
           )}
         </div>
       </div>
+
+      {/* Progress status bar */}
+      <ProgressStatusBar currentStage={stage} />
 
       <div className="max-w-5xl mx-auto px-6 py-8 grid grid-cols-3 gap-6">
 

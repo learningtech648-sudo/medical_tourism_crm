@@ -134,12 +134,9 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-100 px-6 py-4 sticky top-0 z-10">
+      <div className="bg-white border-b border-gray-100 px-6 py-4 sticky top-14 z-10">
         <div className="flex items-center justify-between max-w-[1800px] mx-auto">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-              <span className="text-white text-xs font-bold">MT</span>
-            </div>
             <h1 className="text-lg font-bold text-gray-900">Patient Pipeline</h1>
             {!loading && (
               <span className="text-sm text-gray-400">{patients.length} total</span>
@@ -170,25 +167,6 @@ export default function DashboardPage() {
               + New Lead
             </Link>
           </div>
-        </div>
-      </div>
-
-      {/* Nav links */}
-      <div className="bg-white border-b border-gray-100 px-6">
-        <div className="flex gap-6 max-w-[1800px] mx-auto">
-          {[
-            { href: '/dashboard', label: 'Pipeline' },
-            { href: '/consultations', label: 'Consultations' },
-            { href: '/analytics', label: 'Analytics' },
-          ].map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-gray-600 hover:text-indigo-600 py-3 border-b-2 border-transparent hover:border-indigo-600 transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
         </div>
       </div>
 
