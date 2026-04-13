@@ -161,6 +161,12 @@ export default function DashboardPage() {
               ))}
             </select>
             <Link
+              href="/leads/import"
+              className="border border-indigo-200 text-indigo-600 hover:bg-indigo-50 text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+            >
+              ↑ Import CSV
+            </Link>
+            <Link
               href="/leads/new"
               className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
             >

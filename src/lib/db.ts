@@ -57,6 +57,15 @@ export async function createPatient(patient: Omit<Patient, 'id' | 'created_at' |
   return data as Patient
 }
 
+export async function importPatients(patients: Omit<Patient, 'id' | 'created_at' | 'updated_at'>[]) {
+  const { data, error } = await db()
+    .from('patients')
+    .insert(patients)
+    .select()
+  if (error) throw error
+  return data as Patient[]
+}
+
 export async function updatePatient(id: string, updates: Partial<Patient>) {
   const { data, error } = await db()
     .from('patients')
